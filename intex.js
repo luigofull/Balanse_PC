@@ -19,6 +19,8 @@ function getOption() {
 
 function getCompatibility() {
     let [output1, output2, output3] = getOption() 
+    
+    console.log (output1, output2, output3)
 
     if (output1 === "i3_12100F" & output2 === "GTX_1080ti" & output3 === "ASUS_A610M") {
         return("баланс соблюден")
