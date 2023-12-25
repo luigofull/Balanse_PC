@@ -17,6 +17,12 @@ function getOption() {
     return([output1, output2, output3])
 }
 
+function getRandomNumber(min, max) {
+    min = Math.ceil(min)
+    max = Math.floor(max)
+    return Math.floor(Math.random() * (max - min + 1) + min)
+}
+
 function getCompatibility() {
     let [output1, output2, output3] = getOption() 
     
@@ -36,9 +42,17 @@ function getCompatibility() {
 }
 
 button.addEventListener('click', function (){
+    let RNomber = getRandomNumber(1, 10)
     let res = getCompatibility()
+
     if (res === "Идеальный баланс") {
-        result.style.backgroundImage = images[0]
+        if (RNomber === 5) {
+            result.style.backgroundImage = images[0]
+        }
+        else if (RNomber != 5) {
+            result.style.backgroundImage = images[2]
+        }
+    
     } else if (res === "баланс соблюден") {
         result.style.backgroundImage = images[2]
     } else if (res === "баланс не соблюден") {
